@@ -167,10 +167,10 @@ namespace makerobo {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function setLevel(index: Servos, value: boolean): void { 
         if (value == true) {
-            setPwm(index, 0, 4095);
+            setPwm(index+7, 0, 4095);
         }
         else { 
-            setPwm(index, 0, 0);
+            setPwm(index+7, 0, 0);
         }
     }
 
