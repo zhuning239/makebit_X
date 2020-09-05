@@ -11,8 +11,7 @@
     },
     "files": [
         "README.md",
-        "main.ts",
-        "_locales/zh/makerobot-strings.json"
+        "main.ts"
     ],
     "testFiles": [
         "test.ts"
