@@ -373,11 +373,11 @@ namespace makerobo {
     //% blockId=Microbit_ping block="超声波模块|echo %echo|unit %unit"
     export function ping(echo: DigitalPin, unit: PingUnit, maxCmDistance = 500): number {
 
-        setLevel(Servos.S3, false);
+        setLevel(Servos.S3+7, false);
         control.waitMicros(2);
-        setLevel(Servos.S3, true);
+        setLevel(Servos.S3+7, true);
         control.waitMicros(10);
-        setLevel(Servos.S3, false);
+        setLevel(Servos.S3+7, false);
 
         const d = pins.pulseIn(echo, PulseValue.High, maxCmDistance * 58);
 
