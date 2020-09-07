@@ -166,6 +166,9 @@ namespace makerobo {
     //% blockGap=50
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function setLevel(index: Servos, value: boolean): void { 
+        if (!initialized) {
+            initPCA9685()
+        }
         if (value == true) {
             setPwm(index+7, 0, 4095);
         }
