@@ -377,18 +377,18 @@ namespace makerobo {
     export function ping(echo: DigitalPin, unit: PingUnit, maxCmDistance = 500): number {
         
         //pins.setPull(echo, PinPullMode.PullNone);
-        pins.digitalWritePin(echo, 0);
-        control.waitMicros(2);
-        pins.digitalWritePin(echo, 1);
-        control.waitMicros(10);
-        pins.digitalWritePin(echo, 0);
+        //pins.digitalWritePin(echo, 0);
+        //control.waitMicros(2);
+        //pins.digitalWritePin(echo, 1);
+       // control.waitMicros(10);
+        //pins.digitalWritePin(echo, 0);
        // pins.setPull(echo, PinPullMode.PullUp);
 
-        //setLevel(Servos.S3, false);
+        setLevel(Servos.S3, false);
         //control.waitMicros(2);
-        //setLevel(Servos.S3, true);
+        setLevel(Servos.S3, true);
         //control.waitMicros(10);
-        //setLevel(Servos.S3, false);
+        setLevel(Servos.S3, false);
 
         const d = pins.pulseIn(echo, PulseValue.High, maxCmDistance * 58);
 
