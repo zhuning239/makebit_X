@@ -382,6 +382,7 @@ namespace makerobo {
         pins.digitalWritePin(echo, 1);
         control.waitMicros(10);
         pins.digitalWritePin(echo, 0);
+        pins.setPull(echo, PinPullMode.PullDown);
 
         //setLevel(Servos.S3, false);
         //control.waitMicros(2);
