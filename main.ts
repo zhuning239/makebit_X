@@ -376,19 +376,11 @@ namespace makerobo {
     //% blockId=Microbit_ping block="超声波模块|echo %echo|unit %unit"
     export function ping(echo: DigitalPin, unit: PingUnit, maxCmDistance = 500): number {
         
-        let d:number;
         setLevel(Servos.S3, false);
         setLevel(Servos.S3, true);
         setLevel(Servos.S3, false);
 
-        d = pins.pulseIn(echo, PulseValue.High, maxCmDistance * 58);
-        while(d == 0)
-        {
-            setLevel(Servos.S3, false);
-            setLevel(Servos.S3, true);
-            setLevel(Servos.S3, false);
-            d = pins.pulseIn(echo, PulseValue.High, maxCmDistance * 58); 
-        }
+        const d = pins.pulseIn(echo, PulseValue.High, maxCmDistance * 58);
 
         switch (unit) {
             case PingUnit.Centimeters: return Math.idiv(d, 58);
