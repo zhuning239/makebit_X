@@ -376,7 +376,7 @@ namespace makerobo {
         control.waitMicros(10);
         pins.digitalWritePin(echo, 0);  
         
-        pins.setPull(echo, PinPullMode.PullDown);
+        pins.setPull(echo, PinPullMode.PullUp);
 
         const d = pins.pulseIn(echo, PulseValue.High, maxCmDistance * 58);
 
