@@ -161,7 +161,7 @@ namespace makerobo {
         pins.i2cWriteBuffer(PCA9685_ADDRESS, buf);
     }
 
-    //% blockId=robotbit_setLeveL block="设置舵机|%index|电平 %value"
+    //% blockId=robotbit_setLeveL block="控制声音传感器|%index|电平 %value"
     //% weight=99
     //% blockGap=50
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
@@ -340,17 +340,6 @@ namespace makerobo {
         for (let idx = 1; idx <= 4; idx++) {
             stopMotor(idx);
         }
-    }
-    
-    //% blockId=Microbit_Sensor_Sound block="声音传感器|管脚 %pin"
-    //% weight=99
-    //% blockGap=20
-    //% color="#228B22"
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=5
-    export function Sound(pin: AnalogPin): number {
-        let value: number;
-        value = pins.analogReadPin(pin);
-        return value;
     }
     
     //% blockId=Microbit_Sensor_IR block="红外避障传感器|引脚 %pin|值 %value"
